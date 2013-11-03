@@ -16,7 +16,7 @@ public class RecordUnit {
 	// 设置音频采样率，44100是目前的标准，但是某些设备仍然支持22050，16000，11025，8000
 	private static int sampleRateInHz = 44100;
 	// 设置音频的录制的声道CHANNEL_IN_STEREO为双声道，CHANNEL_CONFIGURATION_MONO为单声道
-	private static int channelConfig = AudioFormat.CHANNEL_CONFIGURATION_STEREO;
+	private static int channelConfig = AudioFormat.CHANNEL_IN_MONO;
 	private static int audioFormat = AudioFormat.ENCODING_PCM_16BIT;
 	private int audioSource = MediaRecorder.AudioSource.MIC;
 	private static AudioRecord audioRecord;

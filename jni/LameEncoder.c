@@ -38,7 +38,8 @@ JNIEXPORT jint JNICALL Java_com_tietie_postcard_func_LameEncoder_onEncode(JNIEnv
 	short * c_input_buffer = (short *)array_body;
 	unsigned char mp3_buffer[MP3_SIZE];
     
-	jint output_length = lame_encode_buffer_interleaved(lame, c_input_buffer, input_len, mp3_buffer, MP3_SIZE);
+	// jint output_length = lame_encode_buffer_interleaved(lame, c_input_buffer, input_len, mp3_buffer, MP3_SIZE);
+	jint output_length = lame_encode_buffer(lame, c_input_buffer,c_input_buffer,input_len,mp3_buffer, MP3_SIZE);
 	jbyte *by = (jbyte*)mp3_buffer;
 	(*env)->SetByteArrayRegion(env, output_buffer, 0, output_length, by);
 
